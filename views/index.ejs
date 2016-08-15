@@ -101,18 +101,18 @@
 	<div class="row">
 		<div id="register">
 			<fieldset id="dialog-form">
-				<label for="name">Họ tên</label><br>
+				<label for="name">Họ tên<sup style="color: #f00">*</sup></label><br>
 			    <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all" required><br>
 			    <label for="email">Email</label><br>
 			    <input type="text" name="email" id="email" class="text ui-widget-content ui-corner-all"><br>
 
-			    <label for="job">Nghề nghiệp</label><br>
+			    <label for="job">Nghề nghiệp<sup style="color: #f00">*</sup></label><br>
     			<input type="radio" name="job" value="student" class="radioBtn"> Sinh viên &nbsp&nbsp<span class="foobr"><br></span>
     			<input type="radio" name="job" value="researcher" class="radioBtn"> Nghiên cứu sinh &nbsp&nbsp<span class="foobr"><br></span>
     			<input type="radio" name="job" value="medical" class="radioBtn"> Y bác sĩ &nbsp&nbsp<span class="foobr"><br></span>
     			<input type="radio" name="job" value="other" class="radioBtn" required> Khác<br>
 
-    			<label for="major">Chuyên môn</label><br>
+    			<label for="major">Chuyên môn<sup style="color: #f00">*</sup></label><br>
     			<input type="radio" name="major" value="cs" class="radioBtn"> Khoa học máy tính &nbsp&nbsp<span class="foobr"><br></span>
     			<input type="radio" name="major" value="medical" class="radioBtn"> Y dược &nbsp&nbsp<span class="foobr"><br></span>
     			<input type="radio" name="major" value="other" class="radioBtn" required> Khác<br>
@@ -206,12 +206,9 @@
     			success:function(response){
     				$('#sid').html(response.row.id);
     				$('.sentence').html(response.row.content);
-<<<<<<< HEAD
-=======
     			},
     			error:function(error){
     				console.log(error);
->>>>>>> 43d4679e73cbcc57c7be16aafcb24b098926b406
     			}
     		});
     	});
@@ -235,18 +232,25 @@
     				data: data,
     				success:function(response){
     					// console.log(1);
-<<<<<<< HEAD
-    				}
-=======
     				},
 	    			error:function(error){
 	    				console.log(error);
 	    			}
->>>>>>> 43d4679e73cbcc57c7be16aafcb24b098926b406
     			});
     			closeDialog();
     		} else{
-    			alert('Please fill all fields');
+    			if (!name) {
+    				alert('Vui lòng điền tên của bạn!');
+    			}
+    			else if (!job) {
+    				alert('Vui lòng chọn nghề nghiệp hiện tại của bạn!');
+    			}
+    			else if (!major) {
+    				alert('Vui lòng chọn chuyên môn của bạn!');
+    			}
+    			else {
+    				console.log(error);
+    			}
     		}
     	});
 

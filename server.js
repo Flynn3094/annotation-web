@@ -3,10 +3,8 @@ var app=express();
 var mysql=require('mysql');
 var bodyParser=require('body-parser');
 
-<<<<<<< HEAD
-=======
 app.use(bodyParser.urlencoded({extended:true}));
->>>>>>> 43d4679e73cbcc57c7be16aafcb24b098926b406
+
 app.use(bodyParser.json());
 
 app.set('view engine','ejs');
@@ -78,10 +76,10 @@ app.get('/submit',function(req,res){
 });
 
 app.post('/register',function(req,res){
-<<<<<<< HEAD
+
 	console.log(req);
 	res.send(req);
-=======
+
 	var connection=mysql.createConnection({
 		host:'localhost',
 		user:'root',
@@ -105,7 +103,7 @@ app.post('/register',function(req,res){
 			res.status(500).json({error:err});
 		}
 	});
->>>>>>> 43d4679e73cbcc57c7be16aafcb24b098926b406
+
 });
 
 app.use(express.static(__dirname+'/static'));

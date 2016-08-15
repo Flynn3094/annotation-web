@@ -149,12 +149,10 @@
 	outline: none;
 }
 
-<<<<<<< HEAD
 .btn-link, .btn-link:hover, .btn-link:active, .btn-link:focus, .btn-link:visited {
 	outline: none !important;
 }
 
-=======
 .btn-link:hover, .btn-link:active, .btn-link:focus {
 	outline: none !important;
 }
@@ -164,7 +162,6 @@
 	border: none;
 }
 
->>>>>>> 43d4679e73cbcc57c7be16aafcb24b098926b406
 @media screen and (max-width: 600px) {
 	#dialog-form {
 		width: 90%;
