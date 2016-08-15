@@ -76,10 +76,6 @@ app.get('/submit',function(req,res){
 });
 
 app.post('/register',function(req,res){
-
-	console.log(req);
-	res.send(req);
-
 	var connection=mysql.createConnection({
 		host:'localhost',
 		user:'root',
@@ -99,7 +95,7 @@ app.post('/register',function(req,res){
 	};
 	connection.query('INSERT INTO user SET ?',user,function(err,result){
 		if (err){
-			console.log(err);
+			// console.log(err);
 			res.status(500).json({error:err});
 		}
 	});
