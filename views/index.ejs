@@ -206,6 +206,9 @@
     			success:function(response){
     				$('#sid').html(response.row.id);
     				$('.sentence').html(response.row.content);
+    			},
+    			error:function(error){
+    				console.log(error);
     			}
     		});
     	});
@@ -230,7 +233,10 @@
     				data: data,
     				success:function(response){
     					console.log(1);
-    				}
+    				},
+	    			error:function(error){
+	    				console.log(error);
+	    			}
     			});
     		} else{
     			alert('Please fill all fields');

@@ -149,8 +149,13 @@
 	outline: none;
 }
 
-.btn-link, .btn-link:hover, .btn-link:active, .btn-link:focus, .btn-link:visited {
+.btn-link:hover, .btn-link:active, .btn-link:focus {
 	outline: none !important;
+}
+
+.btn-link .btn-link:visited {
+	outline: none;
+	border: none;
 }
 
 @media screen and (max-width: 600px) {
