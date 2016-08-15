@@ -6,10 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Annotation</title>
+	<link rel="shortcut icon" href="img/fa.ico" type="image/fav.ico"/>
 
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
-	<link rel="shortcut icon" href="img/fa.ico" type="image/fav.ico"/>
+
 </head>
 <body>
   	<!-- Signin -->
@@ -75,9 +76,6 @@
 				</h3>
 				<samp>
 					<span id="<%= row.id %>" class="sentence"><%= row.content %></span>
-					<button type="button" class="btn btn-link submitLabel" value="3" style="font-family: Helvetica;">
-						<strong><span class="glyphicon glyphicon-refresh"></span> Đổi câu khác</strong>
-					</button><br>
 				</samp>
 
 				<p>
@@ -94,6 +92,9 @@
 				<button type="button" class="btn btn-danger submitLabel" value="0">
 					<strong>TIÊU CỰC</strong>
 				</button>
+				<button type="button" class="btn btn-link submitLabel changeData" value="3">
+					<strong><span class="glyphicon glyphicon-refresh"></span> Đổi câu khác</strong>
+				</button><br>
 				</p>
 			</div>
 		</div>
@@ -132,6 +133,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
+
     <script type="text/javascript"> //Adjust the height of register background always cover all page
     	$(function(){
     		var bodyH = $("body").height();

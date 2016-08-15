@@ -134,7 +134,9 @@
 }
 
 .ndba button {
-	border-radius: 0;
+    border-radius: 0;
+    padding-top: 9px;
+    font-size: 0.9em;
 }
 
 .foobr {
@@ -147,6 +149,10 @@
 
 .submitLabel:hover, .submitLabel:active, {
 	outline: none;
+}
+
+.changeData {
+	font-family: Helvetica;
 }
 
 .btn-link, .btn-link:hover, .btn-link:active, .btn-link:focus, .btn-link:visited {
@@ -182,5 +188,35 @@
 @media screen and (max-width: 350px) {
 	.btn-form{
 		width: 100%;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.submitLabel {
+		display: block;
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 1em;
+	}
+
+	.ndba button {
+		padding-top: 6px;
+	}
+}
+
+@media screen and (max-width: 520px) and (min-width: 400px) {
+	.submitLabel {
+		width: 32%;
+	}
+	.changeData {
+		display: block;
+		margin-top: 0.6em;
+	}
+}
+
+@media screen and (min-width: 520px) {
+	.submitLabel {
+		width: 9em;
 	}
 }
