@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Annotation</title>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  	<!-- Signin -->
+	<script>
+		function myFunction() {
+		    var person = prompt("Please enter your name", "Harry Potter");
+		    if (person != null) {
+		        document.getElementById("demo").innerHTML =
+		        "Hello " + person + "! How are you today?";
+		    }
+		}
+	</script>
+
+    <div class="container-fluid middle">
+		<div class="row guidance" style="background-color: #f7e8ad">
+			<div class="col-md-12 hdsd">
+				<h3>
+					Hướng dẫn
+				</h3>
+				<p>
+					<!-- Click vào câu trong phần NỘI DUNG và lựa chọn phân loại cảm xúc phù hợp cho câu đó. -->
+					Chọn phân loại cảm xúc phù hợp cho câu trong phần NỘI DUNG.
+					<ul>
+						<li>
+							Câu có phân loại cảm xúc <span class="positive"><small><strong>TÍCH CỰC</strong></small></span> là những câu thể hiện kết quả tốt, cải thiện hơn, hoặc mô tả các chỉ số ở mức bình thường.<br>
+							<em>Ví dụ: "Patients subjectively reported significantly greater relief from symptoms with Debacterol than with Kenalog-in-Orabase or no treatment."</em>
+						</li>
+						<li>
+							Câu có phân loại cảm xúc <span class="neutral"><small><strong>TRUNG TÍNH</strong></small></span> là những câu không mô tả kết quả, hoặc mô tả kết quả không thay đổi so với lúc trước.<br>
+							<em>Ví dụ: "Data extraction and analyses and quality assessment were conducted according to the Cochrane standards."</em>
+						</li>
+						<li>
+							Câu có phân loại cảm xúc <span class="negative"><small><strong>TIÊU CỰC</strong></small></span> là những câu thể hiện kết quả xấu, tệ hơn lúc trước, hoặc mô tả các chỉ số không như bình thường.<br>
+							<em>Ví dụ: "There is a suggestion that routine sur- gical interference may be harmful by in- creasing the risk of caesarean section, and this agrees with data from other trials."</em>
+						</li>
+					</ul>
+					Bạn có thể chọn <span style="color: #337ab7"><strong><span class="glyphicon glyphicon-refresh"></span> Đổi câu khác</strong></span> khi cảm thấy câu có phân loại cảm xúc không rõ ràng.
+				</p>
+			</div>
+			<span class="minmax">
+				<button type="button" class="btn btn-block btn-xs btn-minimize">
+					<span id="buttonUp" class="glyphicon glyphicon-chevron-up"></span>
+				</button>
+			</span>
+		</div>
+		<div class="row">
+			<div class="col-md-2 count">
+				<h3>
+					<strong>CÂU #<span id='sid'><%= row.id %></span></strong>
+				</h3>
+				<p>
+					<table>
+						<tr>
+							<td>Số lượt đã gắn nhãn: &nbsp</td>
+							<td> <%= row.nums %></td>
+						</tr>
+					</table>
+				</p>
+			</div>
+			<div class="col-md-10 ndba">
+				<h3>
+					<strong>NỘI DUNG</strong>
+				</h3>
+				<samp>
+					<span id="<%= row.id %>" class="sentence"><%= row.content %></span>
+					<button type="button" class="btn btn-link submitLabel" value="3" style="font-family: Helvetica;">
+						<strong><span class="glyphicon glyphicon-refresh"></span> Đổi câu khác</strong>
+					</button><br>
+				</samp>
+
+				<p>
+				<br>
+				<!-- <button type="button" class="btn btn-primary">
+					<strong>Tiếp theo</strong>
+				</button> -->
+				<button type="button" class="btn btn-success submitLabel" value="2">
+					<strong>TÍCH CỰC</strong>
+				</button>
+				<button type="button" class="btn btn-primary submitLabel" value="1">
+					<strong>TRUNG TÍNH</strong>
+				</button>
+				<button type="button" class="btn btn-danger submitLabel" value="0">
+					<strong>TIÊU CỰC</strong>
+				</button>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div id="register">
+			<fieldset id="dialog-form">
+				<label for="name">Họ tên</label><br>
+			    <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all" required><br>
+			    <label for="email">Email</label><br>
+			    <input type="text" name="email" id="email" class="text ui-widget-content ui-corner-all"><br>
+
+			    <label for="job">Nghề nghiệp</label><br>
+    			<input type="radio" name="job" value="student" class="radioBtn"> Sinh viên &nbsp&nbsp<span class="foobr"><br></span>
+    			<input type="radio" name="job" value="researcher" class="radioBtn"> Nghiên cứu sinh &nbsp&nbsp<span class="foobr"><br></span>
+    			<input type="radio" name="job" value="medical" class="radioBtn"> Y bác sĩ &nbsp&nbsp<span class="foobr"><br></span>
+    			<input type="radio" name="job" value="other" class="radioBtn" required> Khác<br>
+
+    			<label for="major">Chuyên môn</label><br>
+    			<input type="radio" name="major" value="cs" class="radioBtn"> Khoa học máy tính &nbsp&nbsp<span class="foobr"><br></span>
+    			<input type="radio" name="major" value="medical" class="radioBtn"> Y dược &nbsp&nbsp<span class="foobr"><br></span>
+    			<input type="radio" name="major" value="other" class="radioBtn" required> Khác<br>
+
+				<!-- <input id="submit" class="button" type="submit" name="submit" value="Xác nhận" onclick="submitForm()"> -->
+				<button id="submit" class="button btn-form" type="submit" name="submit">Xác nhận</button>
+				<button id="cancel" class="button btn-form" type="button" name="cancel" onclick="closeDialog()">Bỏ qua</button>
+    		</fieldset>
+    	</div>
+    </div>
+    <div class="row">
+    	<div class="col-md-12 thanks">
+    		<em>"Mỗi câu bạn đánh dấu là một phần đóng góp giúp nhóm mình hoàn thành luận văn tốt nghiệp. Xin chân thành cảm ơn!"</em>
+    	</div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script type="text/javascript"> //Adjust the height of register background always cover all page
+    	$(function(){
+    		var bodyH = $("body").height();
+    		var windowH = $(window).height();
+    		var registerH = $('#register').height();
+    		if (windowH > bodyH) {
+    			$('#register').css({'height':($(window).height())+'px'});
+    		} else {
+    			$('#register').css({'height':($("body").height())+'px'});
+    		}
+    		$(window).resize(function(){
+    			var bodyH = $("body").height();
+    			var windowH = $(window).height();
+    			var registerH = $('#register').height();
+    			if (windowH > bodyH) {
+    				$('#register').css({'height':($(window).height())+'px'});
+    			} else {
+    				$('#register').css({'height':($("body").height())+'px'});
+    			}
+    		})
+    	});
+    </script>
+    <script type="text/javascript"> //Adjust the position of thanks always be at bottom of page
+    	$(function(){
+    		var middleH = $(".middle").height();
+    		var windowH = $(window).height();
+    		var thankH = $('.thanks').height();
+
+    		if (windowH > middleH) {
+    			$('.thanks').css({'margin-top':($(window).height()-$(".middle").height()-$('.thanks').height())+'px'});
+    		}
+    		else {
+    			$('#register').css({'height':($('#register').height()+$('.thanks').height()+50)+'px'});
+    			$('.thanks').css({'margin-top':(50)+'px'});
+    		}
+
+    		$(window).resize(function(){
+    			var middleH = $(".middle").height();
+    			var windowH = $(window).height();
+    			var thankH = $('.thanks').height();
+
+    			if (windowH > middleH) {
+    				$('.thanks').css({'margin-top':($(window).height()-$(".middle").height()-$('.thanks').height())+'px'});
+    			}
+    			else {
+    				$('#register').css({'height':($('#register').height()+$('.thanks').height()+50)+'px'});
+    				$('.thanks').css({'margin-top':(50)+'px'});
+    			}
+    		});
+    	});
+    </script>
+    <script type="text/javascript"> //Config Esc to exit register form
+    	$( document ).on( 'click', function ( e ) {
+    		if ( $( e.target ).closest("#register").length === 0 ) {
+    			$('#register').hide();
+    		}
+    	});
+
+    	$( document ).on( 'keydown', function ( e ) {
+		    if ( e.keyCode === 27 ) { // ESC
+		    	$('#register').hide();
+		    }
+		});
+    </script>
+    <script type="text/javascript"> //Send labeling result
+    	$(".submitLabel").click(function(){
+    		var label=$(this).val();
+    		var id=$('#sid').html();
+    		console.log(id);
+    		$.ajax({
+    			url:'/submit?'+'id='+id+'&label='+label,
+    			type:'GET',
+    			success:function(response){
+    				$('#sid').html(response.row.id);
+    				$('.sentence').html(response.row.content);
+    			}
+    		});
+    	});
+    </script>
+    <script type="text/javascript"> //Send register result
+    	$("#submit").click(function(){
+    		var name=$('input[id="name"]').val();
+    		var email=$('input[id="email"]').val();
+    		var job=$('input[name="job"]:checked').val();
+    		var major=$('input[name="major"]:checked').val();
+    		if (name && job && major){
+    			var data={
+    				name:name,
+    				email:email,
+    				job:job,
+    				major:major
+    			};
+    			console.log(data);
+    			$.ajax({
+    				type:'POST',
+    				url: '/register',
+    				data: data,
+    				success:function(response){
+    					console.log(1);
+    				}
+    			});
+    		} else{
+    			alert('Please fill all fields');
+    		}
+    	});
+
+    </script>
+</body>
+</html>
