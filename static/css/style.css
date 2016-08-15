@@ -1,0 +1,177 @@
+.sentence {
+	position: relative;
+	font-size: 1.1em;
+}
+
+.ndba {
+	position: relative;
+	font-size: 1.3em;
+}
+
+.positive {
+	padding: 2px;
+	background-color: #5cb85c;
+	border-radius: 5px;
+	color: #fff;
+}
+
+.neutral {
+	padding: 2px;
+	background-color: #4ab0cd;
+	border-radius: 5px;
+	color: #fff;
+}
+
+.negative {
+	padding: 2px;
+	background-color: #d9534f;
+	border-radius: 5px;
+	color: #fff;
+}
+
+.hdsd {
+	background-color: #f7e8ad;
+}
+
+.hdsd li {
+	margin-bottom: 0.5em;
+}
+
+.btn-minimize {
+	background-color: #fce792;
+	margin-right: 0;
+	margin-left: 0;
+	border-radius: 0;
+	outline: none;
+}
+
+.btn-minimize:hover, .btn-minimize:active, .btn-minimize.btn-plus:active, .btn-minimize.btn-plus:hover {
+	background-color: #ffdf63;
+	outline: none;
+}
+
+.btn-minimize.btn-plus {
+    background-color: #fce792;
+	border-radius: 0;
+	outline: none;
+}
+
+#register {
+	position: absolute;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(20,20,20,0.5);
+}
+
+#dialog-form {
+	/*position: absolute;*/
+	background-color: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 999;
+	overflow: hidden;
+	font-size: 1.3em;
+	padding: 1.5em;
+	padding-bottom: 1em;
+	width: 30em;
+	margin-top: 5%;
+	border: 3px double black;
+}
+
+#dialog-form input {
+	margin-top: 0.3em;
+	margin-bottom: 0.7em;
+}
+
+#dialog-form input.button {
+	margin-top: 0.7em;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+}
+
+#name, #email {
+	width: 100%;
+}
+
+.btn-form {
+	width: 49%;
+	margin-top: 0.7em;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+}
+
+#submit {
+	background-color: #3b9d3d;
+}
+
+#submit:hover, #submit:active {
+	background-color: #5cb85c;
+}
+
+#cancel {
+	background-color: #dd9125;
+}
+
+#cancel:hover, #cancel:active {
+	background-color: #f0ad4e;
+}
+
+.thanks {
+	text-align: center;
+	font-size: 1.1em;
+}
+
+.ndba button {
+	border-radius: 0;
+}
+
+.foobr {
+	display: none;
+}
+
+.submitLabel {
+	outline: none;
+}
+
+.submitLabel:hover, .submitLabel:active, {
+	outline: none;
+}
+
+.btn-link, .btn-link:hover, .btn-link:active, .btn-link:focus, .btn-link:visited {
+	outline: none !important;
+}
+
+@media screen and (max-width: 600px) {
+	#dialog-form {
+		width: 90%;
+	}
+	#dialog-form .radioBtn {
+		width: initial;
+		font-size: 0.8em;
+	}
+	#dialog-form input {
+		width: 100%;
+		align:left;
+	}
+	.foobr {
+		display: inline;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.btn-form{
+		width: 100%;
+	}
+}
