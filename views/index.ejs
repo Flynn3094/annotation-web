@@ -9,6 +9,10 @@
 
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
+<<<<<<< HEAD
+=======
+	<!-- <link rel="shortcut icon" href="favicon.ico" type="image/fav.ico"/> -->
+>>>>>>> 43d4679e73cbcc57c7be16aafcb24b098926b406
 </head>
 <body>
   	<!-- Signin -->
@@ -206,6 +210,12 @@
     			success:function(response){
     				$('#sid').html(response.row.id);
     				$('.sentence').html(response.row.content);
+<<<<<<< HEAD
+=======
+    			},
+    			error:function(error){
+    				console.log(error);
+>>>>>>> 43d4679e73cbcc57c7be16aafcb24b098926b406
     			}
     		});
     	});
@@ -230,7 +240,14 @@
     				data: data,
     				success:function(response){
     					console.log(1);
+<<<<<<< HEAD
     				}
+=======
+    				},
+	    			error:function(error){
+	    				console.log(error);
+	    			}
+>>>>>>> 43d4679e73cbcc57c7be16aafcb24b098926b406
     			});
     		} else{
     			alert('Please fill all fields');

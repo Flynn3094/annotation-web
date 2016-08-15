@@ -3,6 +3,10 @@ var app=express();
 var mysql=require('mysql');
 var bodyParser=require('body-parser');
 
+<<<<<<< HEAD
+=======
+app.use(bodyParser.urlencoded({extended:true}));
+>>>>>>> 43d4679e73cbcc57c7be16aafcb24b098926b406
 app.use(bodyParser.json());
 
 app.set('view engine','ejs');
@@ -74,8 +78,34 @@ app.get('/submit',function(req,res){
 });
 
 app.post('/register',function(req,res){
+<<<<<<< HEAD
 	console.log(req);
 	res.send(req);
+=======
+	var connection=mysql.createConnection({
+		host:'localhost',
+		user:'root',
+		password:'admin',
+		database:'app'
+	});
+	connection.connect(function(err){
+		if (err){
+			console.log(err);
+		}
+	});
+	var user={
+		name:req.body.name,
+		email:req.body.email,
+		job:req.body.job,
+		major:req.body.major
+	};
+	connection.query('INSERT INTO user SET ?',user,function(err,result){
+		if (err){
+			console.log(err);
+			res.status(500).json({error:err});
+		}
+	});
+>>>>>>> 43d4679e73cbcc57c7be16aafcb24b098926b406
 });
 
 app.use(express.static(__dirname+'/static'));
